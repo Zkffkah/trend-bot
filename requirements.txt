@@ -1,0 +1,8 @@
+baostock
+pandas
+numpy
+ta-lib
+requests
+matplotlib
+datetime
+ccxt
