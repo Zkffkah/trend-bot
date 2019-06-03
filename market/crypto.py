@@ -39,7 +39,7 @@ class Crypto:
                     continue
                 print("Checking", exchange.describe().get('name'), interval, symbol)
                 time.sleep(exchange.rateLimit / 1000 * 1.2)  # time.sleep wants seconds
-                list = exchange.fetch_ohlcv(symbol, interval)
+                list = exchange.fetch_ohlcv(symbol, interval, limit=100)
                 candles = pd.DataFrame(list, columns=['TimeStamp', 'Open', 'High', 'Low', 'Close', 'Volume'])
                 candles.drop('TimeStamp', axis=1, inplace=True)
                 trigger, desc = detect_trend(candles)
