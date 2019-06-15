@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import config
 from market.crypto import Crypto
 from market.stock import Stock
@@ -5,7 +6,7 @@ from market.stock import Stock
 
 def go():
     config.config.loads('config.json')
-    Crypto().start_check_crypto()
+    Crypto().start_check()
     Stock().start_check_china_stock()
 
 

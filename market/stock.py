@@ -33,6 +33,8 @@ class Stock:
         last_trade_date = trade_date_df[trade_date_df['is_trading_day'] == '1'].iloc[-1]['calendar_date']
 
         stock_rs = bs.query_all_stock(last_trade_date)
+        print('query_all_stock respond error_code:' + stock_rs.error_code)
+        print('query_all_stock respond  error_msg:' + stock_rs.error_msg)
         stock_df = stock_rs.get_data()
 
         for stockcode in stock_df["code"]:
